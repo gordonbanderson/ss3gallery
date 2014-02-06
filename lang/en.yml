@@ -1,0 +1,9 @@
+en:
+  GalleryImage:
+      PLURALNAME: 'Gallery Images'
+      SINGULARNAME: 'Gallery Image'
+      DESCRIPTION: 'An image with a caption'
+  GalleryPage:
+      PLURALNAME: 'Galleries'
+      SINGULARNAME: 'Gallery'
+      DESCRIPTION: 'A gallery of images'

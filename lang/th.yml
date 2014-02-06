@@ -1,0 +1,14 @@
+th:
+  GalleryImage:
+      PLURALNAME: 'Gallery Images (TH)'
+      SINGULARNAME: 'Gallery Image (TH)'
+      DESCRIPTION: 'An image with a caption (TH)'
+      TITLE: 'Title (TH)'
+      IMAGE: 'Image (TH)'
+  GalleryPage:
+      PLURALNAME: 'Galleries (TH)'
+      SINGULARNAME: 'Gallery (TH)'
+      DESCRIPTION: 'A gallery of images (TH)'
+  AttachedGalleryExtension:
+      CHOOSE_A_GALLERY: 'Choose another gallery to show on this page (TH)'
+      ATTACHED_GALLERY: 'Attached Gallery (TH)'
