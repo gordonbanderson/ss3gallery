@@ -18,10 +18,9 @@ class GalleryImage extends DataObject {
   public function getCMSFields() {
  		$fields = parent::getCMSFields();
 		$fields->removeFieldFromTab("Root.Main","GalleryPageID");
-		$fields->removeFieldFromTab("Root.Main","SortOrder");
-
+    $fields->removeFieldFromTab("Root.Main","SortOrder");
     $fields->renameField('Title', _t('GalleryImage.TITLE', 'Title'));
-    $fields->renameField('Title', _t('GalleryImage.IMAGE', 'Image'));
+    $fields->renameField('Image', _t('GalleryImage.IMAGE', 'Image'));
 
 
 		return $fields;		
@@ -37,6 +36,21 @@ class GalleryImage extends DataObject {
   // this function creates the thumnail for the summary fields to use
    public function getThumbnail() { 
      return $this->Image()->CMSThumbnail();
+  }
+
+
+  function HorizontalMargin( $intendedWidth ) {
+    //FIXME - is there a way to avoid a database call here?
+    $image100 = $this->Image()->SetRatioSize(100,100);
+    $result = ( $intendedWidth-$image100->Width )/2;
+    error_log('HORIZONTAL MARGIN:'.$result);
+    return $result;
+  }
+
+  function VerticalMargin( $intendedHeight ) {
+    //FIXME - is there a way to avoid a database call here?
+    $image100 = $this->Image()->SetRatioSize(100,100);
+    return ( $intendedHeight-$image100->Height )/2;
   }
  
 }
