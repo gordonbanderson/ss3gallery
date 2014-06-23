@@ -1,0 +1,6 @@
+---
+name: weboftalent-image-gallery-extensions
+---
+GalleryImage:
+  extensions:
+    ['ImageMetaDataExtension']
