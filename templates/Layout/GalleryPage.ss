@@ -4,7 +4,7 @@
         
             <h2>$Title</h2>
             $Content
-            $Form
+            $Map
            
            <ul id="galleryArea" class="polaroids">
            <% loop getGalleryImages %>
@@ -18,10 +18,6 @@
            </ul>
 
            	<div class="clear"></div>
-            
-           
-    
-    
 			</div>
 
 		</div>
