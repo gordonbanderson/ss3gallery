@@ -1,6 +1,6 @@
 <?php
  
-class GalleryImage extends DataObject {
+class GalleryImage extends DataObject implements RenderableAsPortlet {
  
   
   public static $db = array(	
@@ -36,6 +36,39 @@ class GalleryImage extends DataObject {
   // this function creates the thumnail for the summary fields to use
    public function getThumbnail() { 
      return $this->Image()->CMSThumbnail();
+  }
+
+
+  public function getPortletTitle() {
+    return $this->Title;
+  }
+  
+
+  /**
+   * An accessor method for an image for a portlet
+   * @example
+   * <code>
+   *  return $this->NewsItemImage;
+   * </code>
+   *
+   * @return string
+   */
+  public function getPortletImage() {
+    return $this->Image();
+  }
+  
+  
+  /**
+   * An accessor for text associated with the portlet
+   * @example
+   * <code>
+   * return $this->Summary
+   * </code>
+   *
+   * @return string
+   */ 
+  public function getPortletCaption() {
+    return '';
   }
 
 
