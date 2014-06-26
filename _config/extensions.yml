@@ -1,6 +1,9 @@
 ---
 name: weboftalent-image-gallery-extensions
 ---
+ContentController:
+  extensions:
+    ['LatestGalleryImagesExtension']
 GalleryImage:
   extensions:
     ['ImageMetaDataExtension']
