@@ -1,0 +1,2 @@
+CacheKeyHelper:
+  SiteTree: ['GalleryFolder','GalleryImage']
