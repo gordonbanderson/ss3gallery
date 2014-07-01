@@ -60,13 +60,4 @@ class GalleryPage_Controller extends Page_Controller {
 	public function GetGalleryImages() {
 		return $this->GalleryImages()->sort("SortOrder");
 	}
-
-	public function init() {
-		parent::init();
-		
-		Requirements::css('ss3Gallery/css/ss3Gallery.css');
-		Requirements::javascript('framework/thirdparty/jquery/jquery.js');
-		Requirements::javascript('ss3Gallery/javascript/ss3Gallery.js');
-	}
-
 }
