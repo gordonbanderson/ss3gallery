@@ -7,7 +7,7 @@
 <h1>$Title</h1>
 $Content
 <% loop AllChildren %>
-<div class="row rideListing">
+<div class="row">
 <div class="medium-3 columns"><img class="shadowbox" alt="Photograph of $Top.Title"  data-interchange="[$PortletImage.SetWidth(228).URL, (default)],[$PortletImage.SetWidth(228).URL, (medium)],[$PortletImage.SetWidth(228).URL, (large)], [$PortletImage.SetWidth(640).URL, (small)]"></div>
 <div class="medium-9 columns"><h2><a href="$Link">$Title</a></h2>$Summary</div>
 </div>
