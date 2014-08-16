@@ -1,6 +1,6 @@
 <?php
 
-class GalleryPage extends Page {
+class GalleryPage extends PageWithImage {
 	
 	public static $has_many = array(
     	'GalleryImages' => 'GalleryImage'
