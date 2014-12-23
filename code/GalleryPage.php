@@ -6,24 +6,30 @@ class GalleryPage extends PageWithImage {
     	'GalleryImages' => 'GalleryImage'
   	);
 
+  private static $db = array(
+    'GalleryDate' => 'Date'
+  );
+
    private static $icon = 'ss3gallery/icons/photo.png'; 
 
   
    public function getCMSFields() {
    		$fields = parent::getCMSFields();
-		$gridFieldConfig = GridFieldConfig_RecordEditor::create(); 
-		//$gridFieldConfig->addComponent(new GridFieldBulkEditingTools());
-		$gridFieldConfig->addComponent($gbu = new GridFieldBulkUpload());  
-		$gridFieldConfig->addComponent($gbm = new GridFieldBulkManager()); 
-		$gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));    
-		$galleryimagesi18n = _t('GalleryImage.PLURALNAME', "Gallery Images");
-		//$gbu->setConfig('fileRelationName','Image');
-		$gbu->setConfig('folderName', 'galleries/'.$this->ID);
-		//$gbm->setConfig('editableFields', array('Title'));
-		$gbm->setConfig('fieldsNameBlacklist', array('Lat','Lon','ZoomLevel'));
-		$gridfield = new GridField("GalleryImages", $galleryimagesi18n, $this->GalleryImages()->sort("SortOrder"), $gridFieldConfig);
-		$fields->addFieldToTab('Root.'.$galleryimagesi18n, $gridfield);
-		return $fields;
+  		$gridFieldConfig = GridFieldConfig_RecordEditor::create(); 
+  		//$gridFieldConfig->addComponent(new GridFieldBulkEditingTools());
+  		$gridFieldConfig->addComponent($gbu = new GridFieldBulkUpload());  
+  		$gridFieldConfig->addComponent($gbm = new GridFieldBulkManager()); 
+  		$gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));    
+  		$galleryimagesi18n = _t('GalleryImage.PLURALNAME', "Gallery Images");
+  		//$gbu->setConfig('fileRelationName','Image');
+  		$gbu->setConfig('folderName', 'galleries/'.$this->ID);
+  		//$gbm->setConfig('editableFields', array('Title'));
+  		$gbm->setConfig('fieldsNameBlacklist', array('Lat','Lon','ZoomLevel'));
+  		$gridfield = new GridField("GalleryImages", $galleryimagesi18n, $this->GalleryImages()->sort("SortOrder"), $gridFieldConfig);
+  		$fields->addFieldToTab('Root.'.$galleryimagesi18n, $gridfield);
+
+      $fields->addFieldToTab('Root.Date', new DateField('GalleryDate'));
+  		return $fields;
   }
 
 
