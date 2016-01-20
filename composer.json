@@ -1,10 +1,15 @@
 {
-	"name": "weboftalent/ss3gallery",
-	"description": "Forked and tweaked version of ss3 gallery",
-	"type": "silverstripe-module",
-	"keywords": ["silverstripe", "gallery","images","weboftalent"],
-	"require":
-	{
-		"silverstripe/framework": "~3.1"
-	}
+  "name": "weboftalent/ss3gallery",
+  "description": "Forked and tweaked version of ss3 gallery",
+  "type": "silverstripe-module",
+  "keywords": [
+    "silverstripe",
+    "gallery",
+    "images",
+    "weboftalent"
+  ],
+  "require": {
+    "silverstripe/framework": "~3.1"
+  },
+  "license": "BSD-3-Clause"
 }
