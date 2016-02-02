@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.0.1](https://github.com/gordonbanderson/ss3gallery/tree/1.0.1) (2016-02-02)
+[Full Changelog](https://github.com/gordonbanderson/ss3gallery/compare/1.0.0...1.0.1)
+
 ## [1.0.0](https://github.com/gordonbanderson/ss3gallery/tree/1.0.0) (2016-01-20)
 
 
