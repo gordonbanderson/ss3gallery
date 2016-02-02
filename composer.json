@@ -1,15 +1,18 @@
 {
-  "name": "weboftalent/ss3gallery",
-  "description": "Forked and tweaked version of ss3 gallery",
-  "type": "silverstripe-module",
-  "keywords": [
-    "silverstripe",
-    "gallery",
-    "images",
-    "weboftalent"
-  ],
-  "require": {
-    "silverstripe/framework": "~3.1"
-  },
-  "license": "BSD-3-Clause"
+	"name": "weboftalent/ss3gallery",
+	"description": "Forked and tweaked version of ss3 gallery",
+	"type": "silverstripe-module",
+	"keywords": [
+		"silverstripe",
+		"gallery",
+		"images",
+		"weboftalent"
+	],
+	"require": {
+		"silverstripe/framework": "~3.1",
+		"weboftalent/mappable": "~3.2",
+		"weboftalent/page-with-image": "^1.0",
+		"weboftalent/portlets": "~3.1"
+	},
+	"license": "BSD-3-Clause"
 }
