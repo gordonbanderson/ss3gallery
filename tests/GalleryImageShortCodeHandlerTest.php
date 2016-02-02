@@ -5,7 +5,7 @@ class GalleryImageShortCodeHandlerTest extends SapphireTest {
 		$this->markTestSkipped('TODO');
 	}
 
-	public function test//    link_shortcode_handler() {
+	public function test_link_shortcode_handler() {
 		$this->markTestSkipped('TODO');
 	}
 
