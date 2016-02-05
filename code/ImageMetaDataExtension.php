@@ -1,11 +1,8 @@
 <?php
 
-class ImageMetaDataExtension extends DataExtension implements Mappable
+class ImageMetaDataExtension extends MapExtension
 {
     public static $db = array(
-        'Lat' => 'Decimal(18,15)',
-        'Lon' => 'Decimal(18,15)',
-        'ZoomLevel' => 'Int',
         'ExifRead' => 'Boolean',
         'Aperture' => 'Varchar',
         'ShutterSpeed' => 'Varchar',
@@ -13,8 +10,6 @@ class ImageMetaDataExtension extends DataExtension implements Mappable
         'ISO' => 'Int',
         'Orientation' => 'Int',
     );
-
-    public static $defaults = array('Lat' => 0, 'Lon' => 0, 'Zoom' => 4);
 
     public function processExifData()
     {
@@ -124,23 +119,4 @@ class ImageMetaDataExtension extends DataExtension implements Mappable
         }
     }
 
-    public function getMappableLatitude()
-    {
-        return $this->owner->Lat;
-    }
-
-    public function getMappableLongitude()
-    {
-        return $this->owner->Lon;
-    }
-
-    public function getMappableMapContent()
-    {
-        return MapUtil::sanitize($this->owner->renderWith($this->owner->ClassName.'MapInfoWindow'));
-    }
-
-    public function getMappableMapPin()
-    {
-        return false; //standard pin
-    }
 }
