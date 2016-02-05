@@ -1,5 +1,16 @@
 # Change Log
 
+## [1.0.3](https://github.com/gordonbanderson/ss3gallery/tree/1.0.3) (2016-02-05)
+[Full Changelog](https://github.com/gordonbanderson/ss3gallery/compare/1.0.2...1.0.3)
+
+**Closed issues:**
+
+- No Map Editing Available [\#3](https://github.com/gordonbanderson/ss3gallery/issues/3)
+- Fatal error: Interface 'RenderableAsPortlet' not found  [\#1](https://github.com/gordonbanderson/ss3gallery/issues/1)
+
+## [1.0.2](https://github.com/gordonbanderson/ss3gallery/tree/1.0.2) (2016-02-02)
+[Full Changelog](https://github.com/gordonbanderson/ss3gallery/compare/1.0.1...1.0.2)
+
 ## [1.0.1](https://github.com/gordonbanderson/ss3gallery/tree/1.0.1) (2016-02-02)
 [Full Changelog](https://github.com/gordonbanderson/ss3gallery/compare/1.0.0...1.0.1)
 
