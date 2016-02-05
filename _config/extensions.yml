@@ -6,4 +6,5 @@ ContentController:
     ['LatestGalleryImagesExtension']
 GalleryImage:
   extensions:
-    ['ImageMetaDataExtension']
+    - ImageMetaDataExtension
+    - MapExtension
