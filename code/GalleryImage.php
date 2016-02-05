@@ -18,6 +18,7 @@ class GalleryImage extends DataObject implements RenderableAsPortlet
     {
         $fields = parent::getCMSFields();
         $fields->removeFieldFromTab('Root.Main', 'GalleryPageID');
+        $fields->removeFieldFromTab('Root.Main', 'ExifRead');
         $fields->removeFieldFromTab('Root.Main', 'SortOrder');
         $fields->renameField('Title', _t('GalleryImage.TITLE', 'Title'));
         $fields->renameField('Image', _t('GalleryImage.IMAGE', 'Image'));
