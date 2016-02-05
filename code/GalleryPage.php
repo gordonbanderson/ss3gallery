@@ -18,13 +18,15 @@ class GalleryPage extends PageWithImage
         $gridFieldConfig = GridFieldConfig_RecordEditor::create();
         //$gridFieldConfig->addComponent(new GridFieldBulkEditingTools());
         $gridFieldConfig->addComponent($gbu = new GridFieldBulkUpload());
-        $gridFieldConfig->addComponent($gbm = new GridFieldBulkManager());
+        $editableFields = array('Title', 'Image', 'Aperture', 'ShutterSpeed');
+        $gridFieldConfig->addComponent($gbm = new GridFieldBulkManager($editableFields));
         $gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));
         $galleryimagesi18n = _t('GalleryImage.PLURALNAME', 'Gallery Images');
         //$gbu->setConfig('fileRelationName','Image');
-        $gbu->setConfig('folderName', 'galleries/'.$this->ID);
-        //$gbm->setConfig('editableFields', array('Title'));
-        $gbm->setConfig('fieldsNameBlacklist', array('Lat', 'Lon', 'ZoomLevel'));
+
+        $gbu->setUfConfig('folderName', 'galleries/'.$this->ID);
+        $gbm->setConfig('editableFields', array('Title T1'));
+        // This is no longer available... $gbm->setConfig('fieldsNameBlacklist', array('Lat', 'Lon', 'ZoomLevel'));
         $gridfield = new GridField('GalleryImages', $galleryimagesi18n, $this->GalleryImages()->sort('SortOrder'), $gridFieldConfig);
         $fields->addFieldToTab('Root.'.$galleryimagesi18n, $gridfield);
 
