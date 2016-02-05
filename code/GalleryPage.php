@@ -27,7 +27,7 @@ class GalleryPage extends PageWithImage
         $gbu->setUfConfig('folderName', 'galleries/'.$this->ID);
         $gbm->setConfig('editableFields', array('Title T1'));
         // This is no longer available... $gbm->setConfig('fieldsNameBlacklist', array('Lat', 'Lon', 'ZoomLevel'));
-        $gridfield = new GridField('GalleryImages', $galleryimagesi18n, $this->GalleryImages()->sort('SortOrder'), $gridFieldConfig);
+        $gridfield = new GridField('GalleryImages', $galleryimagesi18n, $this->GalleryImages()->sort('"SortOrder"'), $gridFieldConfig);
         $fields->addFieldToTab('Root.'.$galleryimagesi18n, $gridfield);
 
         $fields->addFieldToTab('Root.Date', new DateField('GalleryDate'));
@@ -37,7 +37,7 @@ class GalleryPage extends PageWithImage
 
     public function Map()
     {
-        $photosWithLocation = $this->GalleryImages()->where('Lat != 0 AND Lon !=0');
+        $photosWithLocation = $this->GalleryImages()->where('"Lat" != 0 AND "Lon" !=0');
         if ($photosWithLocation->count() == 0) {
             return 'No locations found'; // don't render a map
         }
