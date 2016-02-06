@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.0.5](https://github.com/gordonbanderson/ss3gallery/tree/1.0.5) (2016-02-06)
+[Full Changelog](https://github.com/gordonbanderson/ss3gallery/compare/1.0.4...1.0.5)
+
+**Closed issues:**
+
+- Images in Gallery Folder Not Showing [\#9](https://github.com/gordonbanderson/ss3gallery/issues/9)
+
 ## [1.0.4](https://github.com/gordonbanderson/ss3gallery/tree/1.0.4) (2016-02-06)
 [Full Changelog](https://github.com/gordonbanderson/ss3gallery/compare/1.0.3...1.0.4)
 
