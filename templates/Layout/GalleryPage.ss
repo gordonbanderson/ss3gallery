@@ -1,46 +1,37 @@
-<h1>Gallery page override</h1>
-    
-    	<div class="typography">
-        
-            <h2>$Title</h2>
-            $Content
-            $Map
-           
-           <ul id="galleryArea" class="polaroids">
-           <% loop getGalleryImages %>
-           <li>
-           		<% with $Image.SetRatioSize(1400,1000) %>
-                <a href="$URL" title="$Title" rel="$Width"><% end_with %>
-            	$Image.SetSize(200,200)
-                </a>
-           </li>
-           <% end_loop %>
-           </ul>
+<% require css(ss3gallery/css/ss3Gallery.css) %>
+<% require css(ss3gallery/css/prettyPhoto.css) %>
+<% require javascript(framework/thirdparty/jquery/jquery.js) %>
+<% require javascript(ss3gallery/javascript/jquery.prettyPhoto.js) %>
+<% include SideBar %>
+<div class="content-container unit size3of4 lastUnit">
+	<article>
+		<h1>$Title</h1>
+		<div class="content">$Content</div>
+		<ul id="galleryArea">
+       <% loop getGalleryImages %>
+       <li>
 
-           	<div class="clear"></div>
-			</div>
+       		<% with $Image.SetRatioSize(700,700) %>
+            <a href="$URL" title="$Parent.Title" rel="prettyPhoto[pp_gal]"><% end_with %>
+        	$Image.SetHeight(100)
+            </a>
+       </li>
+       <% end_loop %>
+       </ul>
+	</article>
+		$Form
+		$CommentsForm
+</div>
 
-		</div>
 
 
 <script type="text/javascript">
+(function($) {
+
       $(document).ready(function() {
-        $('#galleryArea').magnificPopup({
-          delegate: 'a',
-          type: 'image',
-          tLoading: 'Loading image #%curr%...',
-          mainClass: 'mfp-img-mobile',
-          gallery: {
-            enabled: true,
-            navigateByImgClick: true,
-            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-          },
-          image: {
-            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-            titleSrc: function(item) {
-              return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
-            }
-          }
-        });
+        $(document).ready(function(){
+		    $("a[rel^='prettyPhoto']").prettyPhoto();
+		  });
       });
+})(jQuery);
 </script>
