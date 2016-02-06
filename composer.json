@@ -14,5 +14,8 @@
 		"weboftalent/page-with-image": "^1.0",
 		"weboftalent/portlets": "~3.1"
 	},
+	"suggest": {
+		"jonom/focuspoint" : "Mark the most important part of an image for rendering when images are cropped"
+	},
 	"license": "BSD-3-Clause"
 }
