@@ -78,7 +78,6 @@ class GalleryImage extends DataObject implements RenderableAsPortlet
         //FIXME - is there a way to avoid a database call here?
         $image100 = $this->Image()->SetRatioSize(100, 100);
         $result = ($intendedWidth - $image100->Width) / 2;
-        error_log('HORIZONTAL MARGIN:'.$result);
         return $result;
     }
 
