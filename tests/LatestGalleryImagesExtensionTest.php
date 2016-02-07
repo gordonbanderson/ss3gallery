@@ -20,7 +20,7 @@ class LatestGalleryImagesExtensionTest extends TestWithImage {
             if ($lastEdited == null) {
                 $lastEdited = $gi->LastEdited;
             } else {
-                error_log('GalleryImage LastEdited: ' . $gi->LastEdited);
+                error_log('GalleryImage LastEdited: '.$gi->LastEdited);
                 $this->assertLessThanOrEqual($lastEdited, $gi->LastEdited);
                 $lastEdited = $gi->LastEdited;
             }

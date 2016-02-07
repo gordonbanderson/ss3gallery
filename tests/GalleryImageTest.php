@@ -37,7 +37,7 @@ class GalleryImageTest extends TestWithImage {
         $this->assertEquals(100, $thumbnail->Height);
     }
 
-     public function testGetPortletTitle() {
+      public function testGetPortletTitle() {
         $gi = $this->objFromFixture('GalleryImage', 'gi01');
         $this->assertEquals($gi->Title, $gi->getPortletTitle());
         $gi->Title = 'Another title';
