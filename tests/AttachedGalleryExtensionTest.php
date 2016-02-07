@@ -5,9 +5,6 @@ class AttachedGalleryExtensionTest extends TestWithImage {
 
     protected $requiredExtensions = array('Page' => array('AttachedGalleryExtension'));
 
-    public function setUp() {
-        parent::setUp();
-    }
 
     /*
     Check for the attached gallery tab, and that a gallery can be attached
