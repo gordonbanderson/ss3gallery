@@ -1,29 +1,14 @@
 <?php
 
-class ImageMetaDataExtensionTest extends SapphireTest
+class ImageMetaDataExtensionTest extends TestWithImage
 {
     public function testProcessExifData()
     {
         $gi = new GalleryImage();
-
         $gi->Title = 'Gallery Image Example';
-
-        $folder = Folder::find_or_make('/ImageMetaDataExtensionTest/');
-        $testfilePath = 'assets/ImageMetaDataExtensionTest/test.jpg'; // Important: No leading slash
-
-        $sourcePath = getcwd() . '/ss3gallery/tests/test.jpg';
-        copy($sourcePath, $testfilePath);
-        $image = new Image();
-        $image->Filename = $testfilePath;
-        // TODO This should be auto-detected
-        $image->ParentID = $folder->ID;
-        $image->write();
-
-        error_log('IMAGE FILENAME: ' . $image->ID);
+        $image = Image::get()->filter('Title', 'Test Image')->first();
         $this->assertEquals('assets/ImageMetaDataExtensionTest/test.jpg', $image->Filename);
-
         $gi->ImageID = $image->ID;
-
         //This will trigger processExifData method
         $gi->write();
 
