@@ -7,7 +7,7 @@
 		<% loop AllChildren %>
 			<h2><a href="$Link">$Title</a></h2>
 			$Summary
-			<a href="$Link"><img alt="Photograph of $Top.Title" src="$PortletImage.Fill(300,200).URL"/></a>
+			<a href="$Link"><img alt="Photograph of $Top.Title" src="$PortletImage.BestCrop(300,200).URL"/></a>
 		<% end_loop %>
 		</div>
 	</article>
