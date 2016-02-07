@@ -35,10 +35,6 @@ class AttachedGalleryExtension extends DataExtension
             $result->push($this->owner->AttachedGallery());
         }
 
-        if (count($result) == 0) {
-            $result = false;
-        }
-
         return $result;
     }
 }
