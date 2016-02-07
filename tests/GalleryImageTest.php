@@ -33,10 +33,9 @@ class GalleryImageTest extends TestWithImage {
 
     public function testGetThumbnail() {
         $gi = $this->objFromFixture('GalleryImage', 'gi01');
-        error_log('IMAGE: ' . $gi->Image());
         $thumbnail = $gi->getThumbnail();
-        error_log('THUMBNAIL:' . $thumbnail);
-        $this->assertLessThan(200, $thumbnail->Width);
+        $this->assertEquals(100, $thumbnail->Width);
+        $this->assertEquals(100, $thumbnail->Height);
     }
 
      public function testGetPortletTitle() {
