@@ -7,7 +7,7 @@ class TestWithImage extends SapphireTest {
         $folder = Folder::find_or_make('/TestImageSS3Gallery/');
         $testfilePath = 'assets/TestImageSS3Gallery/test.jpg'; // Important: No leading slash
 
-        $sourcePath = getcwd() . '/ss3gallery/tests/test.jpg';
+        $sourcePath = getcwd().'/ss3gallery/tests/test.jpg';
         copy($sourcePath, $testfilePath);
 
         $image = new Image();

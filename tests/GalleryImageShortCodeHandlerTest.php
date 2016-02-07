@@ -1,13 +1,13 @@
 <?php
 
 class GalleryImageShortCodeHandlerTest extends SapphireTest {
-	protected static $fixture_file = 'ss3gallery/tests/ss3gallery.yml';
+  protected static $fixture_file = 'ss3gallery/tests/ss3gallery.yml';
 
     public function testValidImage()
     {
         $page = $this->objFromFixture('Page', 'page02');
 
-        $galleryImage = $this->objFromFixture('GalleryImage' , 'gi01');
+        $galleryImage = $this->objFromFixture('GalleryImage', 'gi01');
         $content = "[GalleryImage id='{$galleryImage->ID}']";
         $page->Content = $content;
         $page->write();
@@ -21,15 +21,15 @@ class GalleryImageShortCodeHandlerTest extends SapphireTest {
 </div>
 
 ', $html);
-	}
+  }
 
 
     public function testNonExistentImage()
     {
         $page = $this->objFromFixture('Page', 'page02');
 
-        $galleryImage = $this->objFromFixture('GalleryImage' , 'gi01');
-        $nonExistentID = 1000 + $galleryImage->ID;
+        $galleryImage = $this->objFromFixture('GalleryImage', 'gi01');
+        $nonExistentID = 1000+$galleryImage->ID;
         // his will not exist
         $content = "[GalleryImage id='{$nonExistentID}']";
         $page->Content = $content;
