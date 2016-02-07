@@ -8,3 +8,11 @@ GalleryImage:
   extensions:
     - ImageMetaDataExtension
     - MapExtension
+
+#Used if weboftalent/cachekeyhelper is installed
+CacheKeyHelper:
+  SiteTree: ['GalleryFolder','GalleryImage']
+
+#Allow gallery folders in the root folder
+GalleryFolder:
+  can_be_root: true
