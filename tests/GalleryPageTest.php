@@ -2,6 +2,8 @@
 
 class GalleryPageTest extends SapphireTest
 {
+    protected static $fixture_file = 'ss3gallery/tests/ss3gallery.yml';
+
     public function testGetCMSFields()
     {
         $gp = new GalleryPage();
@@ -16,9 +18,31 @@ class GalleryPageTest extends SapphireTest
         $this->assertEquals($expected, $names);
     }
 
-    public function testMap()
+    public function testGalleryWithMappedImages()
     {
-        $this->markTestSkipped('TODO');
+        $gp = $this->objFromFixture('GalleryPage', 'gp01');
+        $map = $gp->Map()->forTemplate()->getValue();
+
+        // Use assert contains to check for map related HTML
+        $this->assertContains('div id="google_map_1" data-google-map-lang="en"  style="width:100%; height: 400px;"', $map);
+        $this->assertContains('class="fullWidthMap mappable', $map);
+        $this->assertContains('data-map', $map);
+        $this->assertContains('data-centre=\'{"lat":48.856614,"lng":2.3522219}\'', $map);
+        $this->assertContains('data-mapmarkers=\'[{"latitude":13.2,"longitude":100.1,"html":"","category":"default","icon":false},{"latitude":13.14,"longitude":99.7,"html":"","category":"default","icon":false},{"latitude":13.4,"longitude":104.2,"html":"","category":"default","icon":false}]\'', $map);
+    }
+
+    public function testGalleryWithMoMappedImages()
+    {
+        // zeroed coordinates mean no location
+        foreach (GalleryImage::get() as $gi) {
+            $gi->Lat = 0;
+            $gi->Lon = 0;
+            $gi->write();
+        }
+        $gp = $this->objFromFixture('GalleryPage', 'gp01');
+        $map = $gp->Map();
+
+        $this->assertEquals('<!-- no image locations found -->', $map);
     }
 
     public function testGetGalleryImages()
