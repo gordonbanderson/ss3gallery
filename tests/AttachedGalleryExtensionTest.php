@@ -32,7 +32,6 @@ class AttachedGalleryExtensionTest extends TestWithImage {
         $gallery1 = $this->objFromFixture('GalleryPage', 'gp01');
         $page->AttachedGalleryID = $gallery1->ID;
         $page->write();
-        $expected = array($page);
         $this->assertEquals('Test Gallery 1', $page->InlineGalleries()->first()->Title);
         $this->assertEquals(1, $page->InlineGalleries()->count());
 
