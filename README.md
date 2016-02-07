@@ -23,14 +23,57 @@
 	<gordon.b.anderson@gmail.com>
 
 ##Introduction
+This gallery module enables bulk upload of images, and displays them using the
+jQuery plugin PrettyPhoto.  It will optionally import metadata, including 
+geographic location.  A map can then be displayed along with the images.
 
 Forked from https://github.com/OpticBlaze/ss3Gallery and adapted to use other
 modules from Web of Talent to aid rendering.
  
 ##Installation
+```
+composer require weboftalent/ss3gallery
+```
 
 ##Usage
+###Uploading Images
 
+###Editing Images
+
+##Templating
+
+##Extensions
+###MapExtension (Enabled by default)
+Images can have their location edited, and also imported if the GPS coordinates
+are present in the EXIF data.
+
+To remove this functionality add the following to mysite/_config.php
+
+```
+GalleryImage::remove_extension('MapExtension')
+```
+
+###ImageMetaDataExtension (Enabled by default)
+Creates fields for a number of photographic metadata fields such as aperture,
+shutterspeed and film speed.  Also imports EXIF data when an image is written
+to the database and EXIF data has not previously been read.
+
+###LatestGalleryImagesExtension (Enabled by default)
+This simply adds a template method allowing one to get the latest N images from
+the database.  This might be of use for say a 'Newest Images' widget.
+
+###AttachedGalleryExtension
+This optional extension allows one to attach a GalleryPage to an existing page
+type and render it inline.  One can add GalleryPages in 1 of 2 manners:
+* Use the tab 'Attached Gallery' and select a gallery existing elsewhere in the
+site.
+* Add child pages, as many as you wish, of type GalleryPage.
 
 ##Requirements
 * SilverStripe 3.1 or 3.2
+* Mappable module
+* Page With Image module
+* Portlets module
+Optionally:
+* Focus Point module - images can be cropped to say a square, but still have the
+main focus point of the image visible.
