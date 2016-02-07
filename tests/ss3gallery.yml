@@ -27,8 +27,18 @@ GalleryPage:
     GalleryDate: 2016-02-05
     Parent: =>GalleryFolder.gf01
 
+#All of these point to the same file but it's for testing purposes only
 GalleryImage:
   gi01:
     Title: Test Image 1
+    Image: =>Image.image01
+  gi02:
+    Title: Test Image 2
+    Image: =>Image.image01
+  gi03:
+    Title: Test Image 3
+    Image: =>Image.image01
+  gi04:
+    Title: Test Image 4
     Image: =>Image.image01
 
