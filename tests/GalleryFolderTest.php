@@ -18,6 +18,8 @@ class GalleryFolderTest extends SapphireTest
 
     public function testSummary()
     {
-        $this->markTestSkipped('TODO');
+        $gf = new GalleryFolder();
+        $gf->Content = 'This is actually used for the summary';
+        $this->assertEquals($gf->Content, $gf->Summary());
     }
 }
