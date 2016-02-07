@@ -39,7 +39,7 @@ class GalleryPage extends PageWithImage
     {
         $photosWithLocation = $this->GalleryImages()->where('"Lat" != 0 AND "Lon" !=0');
         if ($photosWithLocation->count() == 0) {
-            return 'No locations found'; // don't render a map
+            return '<!-- no image locations found -->'; // don't render a map
         }
         $map = $photosWithLocation->getRenderableMap();
         $map->setZoom(10);
@@ -47,7 +47,7 @@ class GalleryPage extends PageWithImage
         $map->setShowInlineMapDivStyle(true);
         $map->setClusterer(true);
 
-        $map->setSize('100%', '600px');
+        $map->setSize('100%', '400px');
         return $map;
         }
     }

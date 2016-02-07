@@ -1,0 +1,55 @@
+Page:
+  page01:
+    Title: Home
+  page02:
+    Title: Top Level Page
+
+Image:
+  image01:
+    Title: Test Image SS 1
+    Filename: 'assets/TestImageSS3Gallery/test.jpg'
+
+GalleryFolder:
+  gf01:
+    Title: Top Level Gallery Folder
+
+GalleryPage:
+  gp01:
+    Title: Test Gallery 1
+    GalleryDate: 2016-02-04
+    Parent: =>GalleryFolder.gf01
+  gp02:
+    Title: Test Gallery 2
+    GalleryDate: 2016-02-08
+    Parent: =>GalleryFolder.gf01
+  gp03:
+    Title: Test Gallery 3
+    GalleryDate: 2016-02-05
+    Parent: =>GalleryFolder.gf01
+
+#All of these point to the same file but it's for testing purposes only
+GalleryImage:
+  gi01:
+    Title: Test Image 1
+    Image: =>Image.image01
+    Lat: 13.1
+    Long: 100.2
+    GalleryPage: =>GalleryPage.gp01
+  gi02:
+    Title: Test Image 2
+    Image: =>Image.image01
+    Lat: 13.2
+    Lon: 100.1
+    GalleryPage: =>GalleryPage.gp01
+  gi03:
+    Title: Test Image 3
+    Image: =>Image.image01
+    Lat: 13.14
+    Lon: 99.7
+    GalleryPage: =>GalleryPage.gp01
+  gi04:
+    Title: Test Image 4
+    Image: =>Image.image01
+    Lat: 13.4
+    Lon: 104.2
+    GalleryPage: =>GalleryPage.gp01
