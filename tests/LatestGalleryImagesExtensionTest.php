@@ -21,7 +21,7 @@ class LatestGalleryImagesExtensionTest extends TestWithImage {
                 $lastEdited = $gi->LastEdited;
             } else {
                 error_log('GalleryImage LastEdited: ' . $gi->LastEdited);
-                $this->assertLessThanOrEqual($gi->LastEdited, $lastEdited);
+                $this->assertLessThanOrEqual($lastEdited, $gi->LastEdited);
                 $lastEdited = $gi->LastEdited;
             }
             $this->assertEquals('GalleryImage', $gi->ClassName);
