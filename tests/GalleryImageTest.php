@@ -47,7 +47,7 @@ class GalleryImageTest extends TestWithImage {
 
     public function testGetPortletImage() {
         $gi = $this->objFromFixture('GalleryImage', 'gi01');
-        $this->assertEquals($gi->Image()->Filename,
+        $this->assertEquals($gi->getPortletImage()->Filename,
                                         'assets/TestImageSS3Gallery/test.jpg');
     }
 
