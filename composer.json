@@ -9,7 +9,7 @@
 		"weboftalent"
 	],
 	"require": {
-		"silverstripe/framework": "~3.1",
+		"silverstripe/cms": "~3.1",
 		"weboftalent/mappable": "~3.2",
 		"weboftalent/page-with-image": "^1.0",
 		"weboftalent/portlets": "~3.1"
