@@ -2,7 +2,7 @@
 
 class TestWithImage extends SapphireTest {
     public function setUp() {
-        error_log('Test with image T1');
+        /*error_log('Test with image T1');
         parent::setUp();
 
         error_log('Test with image T2');
@@ -19,10 +19,11 @@ error_log('Test with image T3');
         $image->ParentID = $folder->ID;
         $image->write();
         error_log('Test with image T4');
+        */
     }
 
     public function tearDown() {
-        unlink('assets/ImageMetaDataExtensionTest/test.jpg');
+        //unlink('assets/ImageMetaDataExtensionTest/test.jpg');
         parent::tearDown();
     }
 }
