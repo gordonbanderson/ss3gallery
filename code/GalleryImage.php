@@ -72,19 +72,4 @@ class GalleryImage extends DataObject implements RenderableAsPortlet
     {
         return '';
     }
-
-    public function HorizontalMargin($intendedWidth)
-    {
-        //FIXME - is there a way to avoid a database call here?
-        $image100 = $this->Image()->SetRatioSize(100, 100);
-        $result = ($intendedWidth - $image100->Width) / 2;
-        return $result;
-    }
-
-    public function VerticalMargin($intendedHeight)
-    {
-        //FIXME - is there a way to avoid a database call here?
-        $image100 = $this->Image()->SetRatioSize(100, 100);
-        return ($intendedHeight - $image100->Height) / 2;
-    }
 }
