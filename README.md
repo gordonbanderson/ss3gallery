@@ -43,11 +43,15 @@ For showing the main point of interest in an image, it is highly recommended to
 install the Focus Point module (`composer require jonom/focuspoint`).  Here is
 why:
 
+![Automatically cropped image of the statue, around it's centre.  The head is all
+but missing.]
 (https://raw.githubusercontent.com/gordonbanderson/ss3gallery/master/screenshots/crop001.png
 "Automatically cropped image of the statue, around it's centre.  The head is all
 but missing.")
+![Edit the focus point, in the case the face of the statue]
 (https://raw.githubusercontent.com/gordonbanderson/ss3gallery/master/screenshots/crop002.png
-"Edit teh focus point, in the case the face of the statue")
+"Edit the focus point, in the case the face of the statue")
+![Same image but with it's focus point now on the face of the statue]
 (https://raw.githubusercontent.com/gordonbanderson/ss3gallery/master/screenshots/crop003.png
 "Same image but with it's focus point now on the face of the statue")
 
