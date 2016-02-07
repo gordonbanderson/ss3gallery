@@ -1,5 +1,17 @@
 # Change Log
 
+## [1.0.6](https://github.com/gordonbanderson/ss3gallery/tree/1.0.6) (2016-02-07)
+[Full Changelog](https://github.com/gordonbanderson/ss3gallery/compare/1.0.5...1.0.6)
+
+**Closed issues:**
+
+- 'From Files' Image Picker Broken [\#6](https://github.com/gordonbanderson/ss3gallery/issues/6)
+- Unable to Create GalleryFolder in Root of Site [\#2](https://github.com/gordonbanderson/ss3gallery/issues/2)
+
+**Merged pull requests:**
+
+- Scrutinizer Auto-Fixes [\#10](https://github.com/gordonbanderson/ss3gallery/pull/10) ([scrutinizer-auto-fixer](https://github.com/scrutinizer-auto-fixer))
+
 ## [1.0.5](https://github.com/gordonbanderson/ss3gallery/tree/1.0.5) (2016-02-06)
 [Full Changelog](https://github.com/gordonbanderson/ss3gallery/compare/1.0.4...1.0.5)
 
