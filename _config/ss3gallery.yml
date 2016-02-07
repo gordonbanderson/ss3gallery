@@ -3,11 +3,16 @@ name: weboftalent-image-gallery-extensions
 ---
 ContentController:
   extensions:
-    ['LatestGalleryImagesExtension']
+    - LatestGalleryImagesExtension
 GalleryImage:
   extensions:
     - ImageMetaDataExtension
     - MapExtension
+
+#Best Crop method
+Image:
+  extensions:
+    - ImageBestCropExtension
 
 #Used if weboftalent/cachekeyhelper is installed
 CacheKeyHelper:
