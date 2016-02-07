@@ -37,33 +37,9 @@ class ImageMetaDataExtensionTest extends SapphireTest
         $this->assertEquals(100.44168916667, $gi->Lon);
     }
 
-    public function testOnAfterWriteNOT()
+    public function testRequireDefaultRecords()
     {
         $this->markTestSkipped('TODO');
     }
 
-    public function testRequireDefaultRecordsNOT()
-    {
-        $this->markTestSkipped('TODO');
-    }
-
-    public function testGetMappableLatitude()
-    {
-        $this->markTestSkipped('TODO');
-    }
-
-    public function testGetMappableLongitude()
-    {
-        $this->markTestSkipped('TODO');
-    }
-
-    public function testGetMappableMapContent()
-    {
-        $this->markTestSkipped('TODO');
-    }
-
-    public function testGetMappableMapPin()
-    {
-        $this->markTestSkipped('TODO');
-    }
 }
