@@ -5,7 +5,6 @@ class LatestGalleryImagesExtensionTest extends TestWithImage {
 
     protected $requiredExtensions = array('Page' => array('LatestGalleryImagesExtension'));
 
-
     public function testLatestGalleryImagesExtension() {
         $page = $this->objFromFixture('Page', 'page02');
         $this->assertEquals(1, $page->LatestGalleryImages(1)->count());
