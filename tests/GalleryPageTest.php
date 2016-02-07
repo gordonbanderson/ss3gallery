@@ -2,6 +2,8 @@
 
 class GalleryPageTest extends SapphireTest
 {
+    protected static $fixture_file = 'ss3gallery/tests/ss3gallery.yml';
+
     public function testGetCMSFields()
     {
         $gp = new GalleryPage();
@@ -26,7 +28,6 @@ class GalleryPageTest extends SapphireTest
         $this->assertContains('class="fullWidthMap mappable', $map);
         $this->assertContains('data-map', $map);
         $this->assertContains('data-centre=\'{"lat":48.856614,"lng":2.3522219}\'', $map);
-
         // Markers are tricky as SQLite does not have trailing zeroes.  Assert sig dig only
         $this->assertContains('13.2', $map);
         $this->assertContains('13.14', $map);
@@ -36,9 +37,18 @@ class GalleryPageTest extends SapphireTest
         $this->assertContains('104.2', $map);
     }
 
-    public function testMap()
+    public function testGalleryWithMoMappedImages()
     {
-        $this->markTestSkipped('TODO');
+        // zeroed coordinates mean no location
+        foreach (GalleryImage::get() as $gi) {
+            $gi->Lat = 0;
+            $gi->Lon = 0;
+            $gi->write();
+        }
+        $gp = $this->objFromFixture('GalleryPage', 'gp01');
+        $map = $gp->Map();
+
+        $this->assertEquals('<!-- no image locations found -->', $map);
     }
 
     public function testGetGalleryImages()
