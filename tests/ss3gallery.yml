@@ -1,0 +1,34 @@
+Page:
+  page01:
+    Title: Home
+  page02:
+    Title: Top Level Page
+
+Image:
+  image01:
+    Title: Test Image SS 1
+    Filename: 'assets/TestImageSS3Gallery/test.jpg'
+
+GalleryFolder:
+  gf01:
+    Title: Top Level Gallery Folder
+
+GalleryPage:
+  gp01:
+    Title: Test Gallery 1
+    GalleryDate: 2016-02-04
+    Parent: =>GalleryFolder.gf01
+  gp02:
+    Title: Test Gallery 2
+    GalleryDate: 2016-02-08
+    Parent: =>GalleryFolder.gf01
+  gp03:
+    Title: Test Gallery 3
+    GalleryDate: 2016-02-05
+    Parent: =>GalleryFolder.gf01
+
+GalleryImage:
+  gi01:
+    Title: Test Image 1
+    Image: =>Image.image01
+
