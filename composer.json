@@ -9,10 +9,12 @@
 		"weboftalent"
 	],
 	"require": {
-		"silverstripe/framework": "~3.1",
+		"silverstripe/cms": "~3.1",
 		"weboftalent/mappable": "~3.2",
 		"weboftalent/page-with-image": "^1.0",
-		"weboftalent/portlets": "~3.1"
+		"weboftalent/portlets": "~3.1",
+		"colymba/gridfield-bulk-editing-tools" : "~2.1",
+		"undefinedoffset/sortablegridfield" : "~0.5"
 	},
 	"suggest": {
 		"jonom/focuspoint" : "Mark the most important part of an image for rendering when images are cropped"
