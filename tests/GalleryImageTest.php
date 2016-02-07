@@ -1,6 +1,8 @@
 <?php
 
-class GalleryImageTest extends SapphireTest {
+class GalleryImageTest extends TestWithImage {
+    protected static $fixture_file = 'ss3gallery/tests/ss3gallery.yml';
+
     public function testCMSFields() {
         $gi = new GalleryImage();
         $fields = $gi->getCMSFields();
@@ -27,5 +29,31 @@ class GalleryImageTest extends SapphireTest {
 
         $expected = array('LatLonZoomLevel', 'MapPinIcon');
         $this->assertEquals($expected, $names);
+    }
+
+    public function testGetThumbnail() {
+        $gi = $this->objFromFixture('GalleryImage', 'gi01');
+        error_log('IMAGE: ' . $gi->Image());
+        $thumbnail = $gi->getThumbnail();
+        error_log('THUMBNAIL:' . $thumbnail);
+        $this->assertLessThan(200, $thumbnail->Width);
+    }
+
+     public function testGetPortletTitle() {
+        $gi = $this->objFromFixture('GalleryImage', 'gi01');
+        $this->assertEquals($gi->Title, $gi->getPortletTitle());
+        $gi->Title = 'Another title';
+        $this->assertEquals($gi->Title, $gi->getPortletTitle());
+    }
+
+    public function testGetPortletImage() {
+        $gi = $this->objFromFixture('GalleryImage', 'gi01');
+        $this->assertEquals($gi->Image()->Filename,
+                                        'assets/TestImageSS3Gallery/test.jpg');
+    }
+
+    public function testGetPortletCaption() {
+        $gi = $this->objFromFixture('GalleryImage', 'gi01');
+        $this->assertEquals('', $gi->getPortletCaption());
     }
 }
