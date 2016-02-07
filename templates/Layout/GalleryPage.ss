@@ -12,7 +12,7 @@
        <li>
 
        		<% with $Image.SetRatioSize(700,700) %>
-            <a href="$URL" title="$Parent.Title" rel="prettyPhoto[pp_gal]"><% end_with %>
+            <a href="$URL" title="$Title" rel="prettyPhoto[pp_gal]"><% end_with %>
         	$Image.SetHeight(100)
             </a>
        </li>
