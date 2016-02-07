@@ -30,12 +30,12 @@ class GalleryPageTest extends SapphireTest
         $this->assertContains('data-centre=\'{"lat":48.856614,"lng":2.3522219}\'', $map);
 
         // Markers are tricky as SQLite does not have trailing zeroes.  Assert sig dig only
-        $this->assertContains('"latitude":13.2', $map);
-        $this->assertContains('"latitude":13.14', $map);
-        $this->assertContains('"latitude":13.4', $map);
-        $this->assertContains(',"longitude":100.1', $map);
-        $this->assertContains(',"longitude":99.7', $map);
-        $this->assertContains(',"longitude":104.2', $map);
+        $this->assertContains('13.2', $map);
+        $this->assertContains('13.14', $map);
+        $this->assertContains('13.4', $map);
+        $this->assertContains('100.1', $map);
+        $this->assertContains('99.7', $map);
+        $this->assertContains('104.2', $map);
     }
 
     public function testGalleryWithMoMappedImages()
