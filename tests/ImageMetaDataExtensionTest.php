@@ -7,7 +7,7 @@ class ImageMetaDataExtensionTest extends TestWithImage
         $gi = new GalleryImage();
         $gi->Title = 'Gallery Image Example';
         $image = Image::get()->filter('Title', 'Test Image')->first();
-        $this->assertEquals('assets/ImageMetaDataExtensionTest/test.jpg', $image->Filename);
+        $this->assertEquals('assets/TestImageSS3Gallery/test.jpg', $image->Filename);
         $gi->ImageID = $image->ID;
         //This will trigger processExifData method
         $gi->write();

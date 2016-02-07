@@ -4,8 +4,8 @@ class TestWithImage extends SapphireTest {
     public function setUp() {
         parent::setUp();
 
-        $folder = Folder::find_or_make('/ImageMetaDataExtensionTest/');
-        $testfilePath = 'assets/ImageMetaDataExtensionTest/test.jpg'; // Important: No leading slash
+        $folder = Folder::find_or_make('/TestImageSS3Gallery/');
+        $testfilePath = 'assets/TestImageSS3Gallery/test.jpg'; // Important: No leading slash
 
         $sourcePath = getcwd() . '/ss3gallery/tests/test.jpg';
         copy($sourcePath, $testfilePath);
@@ -19,7 +19,7 @@ class TestWithImage extends SapphireTest {
     }
 
     public function tearDown() {
-        unlink('assets/ImageMetaDataExtensionTest/test.jpg');
+        unlink('assets/TestImageSS3Gallery/test.jpg');
         parent::tearDown();
     }
 }
