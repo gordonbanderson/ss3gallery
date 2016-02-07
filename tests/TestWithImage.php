@@ -2,8 +2,9 @@
 
 class TestWithImage extends SapphireTest {
     public function setUp() {
-        /*error_log('Test with image T1');
         parent::setUp();
+
+        /*error_log('Test with image T1');
 
         error_log('Test with image T2');
         $folder = Folder::find_or_make('/ImageMetaDataExtensionTest/');
