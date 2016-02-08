@@ -24,8 +24,9 @@
 
 ##Introduction
 This gallery module enables bulk upload of images, and displays them using the
-jQuery plugin PrettyPhoto.  It will optionally import metadata, including 
-geographic location.  A map can then be displayed along with the images.
+jQuery plugin PrettyPhoto.  It will by default try to import photographic 
+metadata, including geographic location.  A map can then be displayed along with
+the images from the photographic template.
 
 Forked from https://github.com/OpticBlaze/ss3Gallery and adapted to use other
 modules from Web of Talent to aid rendering.
@@ -40,8 +41,9 @@ composer require weboftalent/ss3gallery
 
 ###Editing Images
 For showing the main point of interest in an image, it is highly recommended to
-install the Focus Point module (`composer require jonom/focuspoint`).  Here is
-why:
+install the Focus Point module (`composer require jonom/focuspoint`).  Below is
+an example of editing an image so the main area of interest, the head of the
+statue, is not cropped out.
 
 ![Automatically cropped image of the statue, around it's centre.  The head is all
 but missing.]
@@ -56,6 +58,8 @@ but missing.")
 "Same image but with it's focus point now on the face of the statue")
 
 ##Templating
+###Maps
+When rendering a GalleryPage simply have `$Map` in your template.
 
 ##Extensions
 ###MapExtension (Enabled by default)
@@ -83,12 +87,23 @@ type and render it inline.  One can add GalleryPages in 1 of 2 manners:
 * Use the tab 'Attached Gallery' and select a gallery existing elsewhere in the
 site.
 * Add child pages, as many as you wish, of type GalleryPage.
+* In the page template for the relevant page type, add 
+`<% include InlineGalleries %>` where you want to the images to appear.
 
 ##Requirements
 * SilverStripe 3.1 or 3.2
 * Mappable module
 * Page With Image module
 * Portlets module
+
+All of these are automatically installed by Composer.
+
 Optionally:
 * Focus Point module - images can be cropped to say a square, but still have the
 main focus point of the image visible.
+
+##TODO
+* It would be good to have versions of the template ready for popular frameworks
+such as Zurb Foundation or Bootstrap.  I envisage likes of an extra tab
+containing a dropdown with a choice of templating/viewing library to use.
+
