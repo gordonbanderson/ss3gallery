@@ -14,8 +14,8 @@ class GalleryImageTest extends TestWithImage {
             array_push($names, $field->getName());
         }
 
-        $expected = array('Title', 'Aperture', 'ShutterSpeed', 'TakenAt', 'ISO',
-            'Orientation', 'Image');
+        $expected = array('Title', 'Caption', 'Aperture', 'ShutterSpeed',
+            'TakenAt', 'ISO', 'Orientation', 'Image');
         $this->assertEquals($expected, $names);
 
         $fields = $gi->getCMSFields();
