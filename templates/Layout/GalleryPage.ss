@@ -7,31 +7,10 @@
 	<article>
 		<h1>$Title</h1>
 		<div class="content">$Content</div>
-		<ul id="galleryArea">
-       <% loop getGalleryImages %>
-       <li>
+		<% include InlineGallery %>
 
-       		<% with $Image.SetRatioSize(700,700) %>
-            <a href="$URL" title="$Title" rel="prettyPhoto[pp_gal]"><% end_with %>
-        	$Image.SetHeight(100)
-            </a>
-       </li>
-       <% end_loop %>
-       </ul>
 	</article>
 		$Form
 		$CommentsForm
 </div>
-
-
-
-<script type="text/javascript">
-(function($) {
-
-      $(document).ready(function() {
-        $(document).ready(function(){
-		    $("a[rel^='prettyPhoto']").prettyPhoto();
-		  });
-      });
-})(jQuery);
-</script>
+<% include PrimeGalleryJS %>
