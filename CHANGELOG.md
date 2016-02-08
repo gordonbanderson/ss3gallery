@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.0.7](https://github.com/gordonbanderson/ss3gallery/tree/1.0.7) (2016-02-08)
+[Full Changelog](https://github.com/gordonbanderson/ss3gallery/compare/1.0.6...1.0.7)
+
+**Closed issues:**
+
+- Title and Caption [\#12](https://github.com/gordonbanderson/ss3gallery/issues/12)
+- Add Tests [\#11](https://github.com/gordonbanderson/ss3gallery/issues/11)
+
 ## [1.0.6](https://github.com/gordonbanderson/ss3gallery/tree/1.0.6) (2016-02-07)
 [Full Changelog](https://github.com/gordonbanderson/ss3gallery/compare/1.0.5...1.0.6)
 
