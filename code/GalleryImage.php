@@ -5,6 +5,7 @@ class GalleryImage extends DataObject implements RenderableAsPortlet
     public static $db = array(
         'SortOrder' => 'Int',
         'Title' => 'Varchar',
+        'Caption' => 'Text'
     );
 
     // One-to-one relationship with gallery page
