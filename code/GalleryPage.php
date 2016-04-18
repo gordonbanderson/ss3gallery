@@ -49,8 +49,16 @@ class GalleryPage extends PageWithImage
 
         $map->setSize('100%', '400px');
         return $map;
-        }
     }
+
+     public function getGalleryImages()
+    {
+        return $this->GalleryImages()->sort('SortOrder');
+    }
+
+}
+
+
 
 class GalleryPage_Controller extends Page_Controller
 {
