@@ -23,28 +23,32 @@ class ImageMetaDataExtension extends DataExtension
         if ($image->exists()) {
             try {
                 $exif = exif_read_data($filename, null, true);
-                $aperture = $exif['COMPUTED']['ApertureFNumber'];
-                $aperture = str_replace('f/', '', $aperture);
-                $this->owner->Aperture = $aperture;
+                error_log(print_r($exif, 1));
+                if (isset($exif['COMPUTED']['ApertureFNumber'])) {
+                    $aperture = $exif['COMPUTED']['ApertureFNumber'];
+                    $aperture = str_replace('f/', '', $aperture);
+                    $this->owner->Aperture = $aperture;
+                }
+
 
                 $shutterspeed = '';
                 if (isset($exif['ExposureTime'])) {
                     $shutterspeed = $exif['ExposureTime'];
-                } else {
+                } elseif (isset($exif['EXIF']['ExposureTime'])) {
                     $shutterspeed = $exif['EXIF']['ExposureTime'];
                 }
 
                 $this->owner->ShutterSpeed = $shutterspeed;
                 if (isset($exif['DateTimeOriginal'])) {
                     $this->owner->TakenAt = $exif['DateTimeOriginal'];
-                } else {
+                } elseif (isset($exif['EXIF']['DateTimeOriginal'])) {
                     $this->owner->TakenAt = $exif['EXIF']['DateTimeOriginal'];
                 }
 
                 $iso = '';
                 if (isset($exif['ISOSpeedRatings'])) {
                     $iso = $exif['ISOSpeedRatings'];
-                } else {
+                } elseif (isset($exif['EXIF']['ISOSpeedRatings'])) {
                     $iso = $exif['EXIF']['ISOSpeedRatings'];
                 }
 
