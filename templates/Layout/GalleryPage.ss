@@ -1,16 +1,22 @@
-<% require css(ss3gallery/css/ss3Gallery.css) %>
-<% require css(ss3gallery/css/prettyPhoto.css) %>
-<% require javascript(framework/thirdparty/jquery/jquery.js) %>
-<% require javascript(ss3gallery/javascript/jquery.prettyPhoto.js) %>
-<% include SideBar %>
-<div class="content-container unit size3of4 lastUnit">
-	<article>
-		<h1>$Title</h1>
-		<div class="content">$Content</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-24">
+            <h1>$Title</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-24">
+            $Content
 		<% include InlineGallery %>
 
-	</article>
-		$Form
-		$CommentsForm
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-24">
+            $Form
+        </div>
+    </div>
+
+    $CommentsForm
 </div>
-<% include PrimeGalleryJS %>
